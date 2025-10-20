@@ -16,7 +16,7 @@ class AlienInvasion:
         self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height)
         )
-        pygame.display.set_caption("GTA 6")
+        pygame.display.set_caption("Alien Invasion")
         self.stats = GameStats(self)
         self.sb = Scoreboard(self)
         self.ship = Ship(self)
@@ -31,7 +31,7 @@ class AlienInvasion:
         
 
     def run_game(self):
-        """Main game loop"""    
+        #Main game loop    
         while True:
             self._check_events()
             if self.game_active:
@@ -42,10 +42,10 @@ class AlienInvasion:
             
             
     def _check_events(self):
-        """Respond to keypresses and mouse events (helper method)"""
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                sys.exit()  # Immediate exit without cleanup flag
+                sys.exit() 
 
             elif event.type == pygame.KEYDOWN:
                 self._check_keydown_events(event)
@@ -187,7 +187,7 @@ class AlienInvasion:
 
 
     def _update_screen(self):
-        """Update images on the screen and flip to new frame (helper method)"""
+    
         self.screen.fill(self.settings.bg_color)
         for bullet in self.bullets.sprites():
             bullet.drawn_bullet()
@@ -196,7 +196,7 @@ class AlienInvasion:
         self.sb.show_score()
         if not self.game_active: 
             self.play_buttom.draw_buttom()
-        pygame.display.flip()  # Make the most recently drawn screen visible
+        pygame.display.flip()  
 
 
 if __name__ == "__main__":
