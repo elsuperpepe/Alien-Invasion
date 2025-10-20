@@ -11,7 +11,7 @@ class Ship(Sprite):
         self.screen_rect = ai_game.screen.get_rect()
 
         # Carga la imagen CORRECTAMENTE
-        self.image = pygame.image.load('C:/Users/YP/Downloads/Programas/Alienproject/imagen/ship.bmp')
+        self.image = pygame.image.load('imagen/ship.bmp')
         self.rect = self.image.get_rect()
 
         # Posición inicial (centro inferior)
